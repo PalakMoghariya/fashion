@@ -1,0 +1,591 @@
+<!-- {/* <li><hr className="dropdown-divider" /></li> */} -->
+
+<section class="hero">
+  <div class="carousel">
+    <div class="slide">
+      <img src="featured-product-1.jpg" alt="Featured Product 1">
+      <h2>Special Offer</h2>
+      <p>Get 30% off on selected items.</p>
+    </div>
+    <!-- More slides -->
+  </div>
+</section>
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+<section class="featured-products">
+  <div class="product-card">
+    <img src="product-image.jpg" alt="Product Name">
+    <h3>Product Name</h3>
+    <p>$29.99</p>
+    <button>Add to Cart</button>
+  </div>
+  <!-- More product cards -->
+</section>
+
+.featured-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.product-card button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+<section class="filters">
+  <select>
+    <option value="price">Sort by Price</option>
+    <option value="popularity">Sort by Popularity</option>
+  </select>
+  <input type="range" min="0" max="1000" step="10" value="500" id="price-range">
+</section>
+
+
+<section class="product-list">
+  <div class="product-card">
+    <img src="product-image.jpg" alt="Product Name">
+    <h3>Product Name</h3>
+    <p>$49.99</p>
+    <button class="quick-view">Quick View</button>
+  </div>
+</section>
+
+
+<section class="product-detail">
+  <div class="product-images">
+    <img src="product-main.jpg" alt="Product">
+    <div class="product-thumbnails">
+      <img src="thumbnail1.jpg" alt="Thumbnail">
+      <img src="thumbnail2.jpg" alt="Thumbnail">
+    </div>
+  </div>
+  
+  <div class="product-info">
+    <h2>Product Name</h2>
+    <p>$59.99</p>
+    <p>This is a product description. It provides detailed information about the product.</p>
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</section>
+
+
+<section class="related-products">
+  <h3>You might also like</h3>
+  <div class="product-card">...</div>
+  <!-- More related products -->
+</section>
+
+
+<section class="cart">
+  <div class="cart-item">
+    <img src="product-image.jpg" alt="Product">
+    <p>Product Name</p>
+    <input type="number" value="1" min="1">
+    <p>$29.99</p>
+  </div>
+  <div class="cart-total">
+    <p>Total: $59.98</p>
+    <button>Proceed to Checkout</button>
+  </div>
+</section>
+
+
+<section class="checkout">
+  <h3>Billing Information</h3>
+  <form>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="address" placeholder="Shipping Address" required>
+    <input type="text" name="card" placeholder="Credit Card Number" required>
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+
+<section class="login">
+  <h2>Login</h2>
+  <form>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+</section>
+
+
+document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+
+
+
+import React, { useState, useEffect } from 'react'
+import '../components/css/slider.css'
+
+function Slider() {
+  const slides = [
+    {
+      image: "https://m.media-amazon.com/images/I/81MICiMqibL._SY450_PIbundle-32,TopRight,0,0_AA450SH20_.jpg",
+    },
+    {
+      image: "https://images-eu.ssl-images-amazon.com/images/I/51LlOxzaS1S._AC_UL232_SR232,232_.jpg",
+    },
+    {
+      image: "https://images-eu.ssl-images-amazon.com/images/I/81-LnTZYkjL._AC_UL232_SR232,232_.jpg",
+    }
+  ];
+
+  const slides1 = [
+    {
+      image:"https://images.meesho.com/images/products/375549242/vqbpu_400.webp"
+    },
+    {
+      image:"https://images.meesho.com/images/products/466862997/8ujmc_400.webp"
+    },
+    {
+      image:"https://images.meesho.com/images/products/417684100/2fevd_400.webp"
+    }
+  ]
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slide functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Manual navigation functions
+  // const goToSlide = (index) => {
+  //   setCurrentSlide(index);
+  // };
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <div className="slider">
+      <div className="slider-container">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`slide ${index === currentSlide ? 'active' : ''}`}
+            style={{
+              transform: `translateX(${100 * (index - currentSlide)}%)`
+            }}
+          >
+            <img src={slide.image} alt={slide.title} />
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button className="slider-button prev" onClick={prevSlide}>❮</button>
+      <button className="slider-button next" onClick={nextSlide}>❯</button>
+
+      {/* Dots Navigation */}
+      {/* <div className="slider-dots">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`dot ${index === currentSlide ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+      </div> */}
+
+    </div>
+  );
+}
+
+export default Slider;
+
+
+
+Product:-
+import ProductCard from "./ProductCard";
+
+const ProductGrid = ({ products }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
+};
+
+export default ProductGrid;
+
+
+
+images:-
+
+'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/SankrantiStore/TDP_Sankranti.png', 
+  
+  'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/SankrantiStore/TDP_Pooja.png', 
+  
+  'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/SankrantiStore/TDP_HomeRefresh.png', 
+  
+  'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/SankrantiStore/TDP_Festive.png', 
+  
+  'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/SankrantiStore/TDP_Fashion.jpg', 
+  
+  'https://m.media-amazon.com/images/G/31/img24/Consumables/Baby2025/Jan25/NY25_TDP_wellness_2.jpg  ', 
+
+  'https://images.meesho.com/images/products/353355297/ojaod_400.webp',
+
+
+
+
+
+
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* background: hsl(220, 10%, 12%); */
+}
+
+/* .flip-card-container */
+.flip-card-container {
+  width: 250px;
+  height: 350px;
+  margin: 40px;
+  perspective: 1000px;
+  margin-left: -950px;
+}
+
+/* .flip-card */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+/* hover and focus-within states */
+.flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* .card-... */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  margin-left: 200px;
+  backface-visibility: hidden;
+
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.card-p1{
+  width: 230px;
+  margin-left: 10px;
+  padding: 10px;
+  margin-top: -10px;
+}
+.card-p2{
+  margin-left: 20px;
+}
+.card-btn{
+  width: 230px;
+  margin-top: 10px;
+}
+.card-btn:hover{
+  background-color: blue;
+  color: white;
+}
+.card-btn1{
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn1:hover{
+  background-color: blue;
+  color: white;
+}
+.card-btn2{
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn2:hover{
+  background-color: blue;
+  color: white;
+}
+
+
+/* .card-front */
+.card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* .card-back */
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding: 10px;
+}
+
+/* figure */
+figure {
+  z-index: -1;
+}
+
+/* img */
+img {
+  height: 100%;
+  border-radius: none;
+}
+
+/* figcaption */
+figcaption {
+  display: block;
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+/* .img-bg */
+.img-bg {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+.card-front .img-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+
+.card-back .img-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+
+
+/* button */
+button {
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 9px 20px;
+  border: 1px solid grey;
+  border-radius: 1000px;
+  background:transparent;
+  transition: .3s;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  color: var(--primary);
+  background: hsla(var(--hue), 25%, 10%, .2);
+  border-color: currentColor;
+}
+
+button:active {
+  transform: translate(2px);
+}
+
+/* .design-container */
+.design-container {
+  --tr: 90;
+  --op: .5;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+
+/* card2  */
+
+.flip-card-container1 {
+  width: 250px;
+  height: 350px;
+  margin: 40px;
+  perspective: 1000px;
+  margin-left: -50px;
+}
+.flip-card1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+.flip-card-container1:hover .flip-card1,
+.flip-card-container1:focus-within .flip-card1 {
+  transform: rotateY(180deg);
+}
+
+.card-front1{
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card-back1{
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding: 10px;
+}
+
+.card-front1,
+.card-back1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-left: 290px;
+}
+
+
+/* figure */
+figure {
+  z-index: -1;
+}
+
+/* img */
+img {
+  height: 100%;
+  border-radius: none;
+}
+
+/* figcaption */
+figcaption {
+  display: block;
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+.img-bg1 {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+.card-front1 .img-bg1 {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+
+.card-back1 .img-bg1 {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+button {
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 9px 20px;
+  border: 1px solid grey;
+  border-radius: 1000px;
+  background:transparent;
+  transition: .3s;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  color: var(--primary);
+  background: hsla(var(--hue), 25%, 10%, .2);
+  border-color: currentColor;
+}
+
+button:active {
+  transform: translate(2px);
+}
+
+/* .design-container */
+/* .design-container {
+  --tr: 90;
+  --op: .5;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+} */

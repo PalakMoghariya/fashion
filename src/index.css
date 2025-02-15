@@ -5,11 +5,227 @@
   width: 100%;
 }
 .nav-link{
-  color: white;
+  color:black;
 }
 .nav-link:hover{
-  color: white;
+  color:black;
 }
 nav ul{
-  margin-left: 230px;
+  margin-left: 250px;
+}
+
+.slide-img{
+  width: 100%;
+  height: 500px;
+}
+
+
+.btn{
+  width: 200px;
+  margin-left: 10px;
+}
+
+.card{
+  border: none;
+}
+
+.video1{
+  background: url("https://stylesavvy.ie/cdn/shop/files/SS_NEW_BANNER_DEC_24_2.gif?v=1734948043&width=1500");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+}
+.v-h1{
+  text-align: center;
+  margin-left:250px;
+  width: 830px;
+  font-weight: bold;
+  font-size: 60px;
+  margin-top: 200px;
+  color: white;
+  position: absolute;
+}
+.v-p1{
+  text-align: center;
+  margin-top: 350px;
+  color: white;
+  margin-left: 350px;
+  position: absolute;
+}
+.v-btn{
+  background: white;
+  color: black;
+  width: 400px;
+  padding: 10px;
+  margin-top: 400px;
+  margin-left: 430px;
+  position: absolute;
+  text-align: center;
+}
+.v-btn:hover{
+  color: white;
+  background: black;
+  transition: all 1s;
+  transform: scale(1.02);
+}
+.v-btn1{
+  background: white;
+  color: black;
+  padding: 10px;
+  width: 400px;
+  margin-top: 450px;
+  margin-left: 430px;
+  position: absolute;
+  text-align: center;
+  transition: all 1s;
+}
+.v-btn1:hover{
+  color: white;
+  background: black;
+  transition: all 1s;
+  transform: scale(1.02);
+}
+
+/* product Card */
+
+
+
+
+
+
+/* .footer{
+  margin-top: 50px;
+} */
+
+@media screen and (max-width:1024px){
+  .navbar{
+    width: 100%;
+  }
+  .form-control{
+    display: none;
+  }
+  .btn{
+    display: none;
+  }
+  .product-img{
+    width:250px;
+    margin-left: -60px;
+  }
+  .product-img:hover{
+    margin-left: -60px;
+    width:250px;
+  }
+  .product-img1{
+    width: 250px;
+    margin-left: -30px;
+  }
+  .product-img1:hover{
+    width: 250px;
+    margin-left: -30px;
+  }
+  .product-img2{
+    width: 250px;
+    /* margin-left: -5px; */
+  }
+  .product-img2:hover{
+    width: 250px;
+  }
+  .product-img3{
+    width: 240px;
+    margin-left: 10px;
+  }
+  .product-img3:hover{
+    width: 240px;
+  }
+  .product-img3:hover .btn8{
+    width:90px;
+  }
+
+  .video1{
+    width: 100%;
+    height: 500px;
+    display: flex;
+  }
+  .v-h1{
+    margin-top: 100px;
+    margin-left: 170px;
+    font-size: 50px;
+    width: 700px;
+  }
+  .v-p1{
+    margin-left: 260px;
+    color:black;
+    margin-top:250px;
+  }
+  .v-btn{
+    margin-top: 330px;
+    margin-left: 300px;
+  }
+  .v-btn1{
+    margin-top: 390px;
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width:991px){
+  .nav-item{
+    margin-left: -200px;
+  }
+  .form-control{
+    display: none;
+  }
+  .btn{
+    display: none;
+  }
+
+  .video1{
+    width: 100%;
+    height: 500px;
+    display: flex;
+  }
+  .v-h1{
+    margin-top: 100px;
+    margin-left: 130px;
+    font-size: 50px;
+    width: 700px;
+  }
+  .v-p1{
+    margin-left: 240px;
+    color:black;
+    margin-top:250px;
+  }
+  .v-btn{
+    margin-top: 330px;
+    margin-left: 300px;
+  }
+  .v-btn1{
+    margin-top: 390px;
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width:640px){
+  .slide-img{
+    width: 100%;
+    height: 250px;
+    margin-top:60px;
+  }
+  .nav-item{
+    margin-left: -220px;
+  } 
+
+  .v-h1{
+    opacity: 0;
+  }
+  .v-p1{
+    opacity: 0;
+  }
+  .v-btn{
+    width: 200px;
+    margin-left: 60px;
+  }
+  .v-btn1{
+    width: 200px;
+    margin-left: 60px;
+  }
 }

@@ -1,0 +1,419 @@
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  background-color: black;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+.card {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  width: 265px;
+  height: 330px;
+  perspective: 1000px;
+  cursor: pointer;
+  background: transparent;
+}
+.inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.card:hover .inner {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: white;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items:baseline;
+  position: absolute;
+}
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.back {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  transform: rotateY(180deg);
+  border: 1px solid black;
+  z-index: 1;
+}
+.card-p1{
+  width: 260px;
+  margin-left: -05px;
+  padding: 10px;
+  margin-top: -10px;
+}
+.card-p2{
+  margin-left: 20px;
+}
+.card-btn{
+  width: 230px;
+  margin-top: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+}
+.card-btn:hover{
+  background-color: black;
+  color: white;
+}
+.card-btn1{
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn1:hover{
+  background-color: black;
+  color: white;
+}
+.card-btn2{
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn2:hover{
+  background-color: black;
+  color: white;
+}
+.Hampden-img{
+  height: 330px;
+  width: 100%;
+}
+
+
+
+
+/* card 2 */
+.card1 {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  width: 265px;
+  height: 330px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.inner1 {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.card1:hover .inner1 {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.front1,
+.back1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: white;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: baseline;
+  position: absolute;
+}
+.front1 {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.back1 {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  transform: rotateY(180deg);
+  border: 1px solid black;
+  z-index: 1;
+}
+.card-p3{
+  width: 260px;
+  margin-left: -05px;
+  padding: 10px;
+}
+.card-p4{
+  margin-left: 20px;
+}
+.card-btn3{
+  width: 230px;
+  margin-top: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+}
+.card-btn3:hover{
+  background-color: black;
+  color: white;
+}
+.card-btn4{
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn4:hover{
+  background-color: black;
+  color: white;
+}
+.card-btn5{
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  width: 230px;
+  margin-top: 5px;
+}
+.card-btn5:hover{
+  background-color: black;
+  color: white;
+}
+
+/* card 3 */
+.card2{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  width: 265px;
+  height: 330px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.inner2{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition:all 0.5s;
+}
+.card2:hover .inner2{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.front2,
+.back2{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: white;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items:baseline;
+  position: absolute;
+}
+
+.front2{
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.back2{
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.card-p5{
+  width: 260px;
+  margin-left: -5px;
+  padding: 10px;
+  margin-top: -10px;
+}
+
+.card-p6{
+  margin-left: 20px;
+}
+
+.card-btn6{
+  width: 230px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  margin-top: 10px;
+}
+.card-btn6:hover{
+  background-color: black;
+  color: white;
+}
+
+.card-btn7{
+  width: 230px;
+  background-color: blue;
+  color: white;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 1000px;
+}
+.card-btn7:hover{
+  background-color: black;
+  color: white;
+}
+
+.card-btn8{
+  width: 230px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 1000px;
+  margin-top: 5px;
+}
+.card-btn8:hover{
+  background-color: black;
+  color: white;
+}
+.burds-image{
+  height: 330px;
+  width: 100%;
+}
+
+/* card 4 */
+.card3{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  width: 265px;
+  height: 330px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.c-img4{
+  width: 100%;
+  height: 330px;
+}
+.inner3{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.card3:hover .inner3{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.front3,
+.back3{
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items:baseline;
+  position:absolute;
+}
+.front3{
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+.back3{
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+}
+
+.card-p7{
+  width: 260px;
+  margin-left: -5px;
+  padding: 10px;
+  margin-top: -10px;
+}
+.card-p8{
+  margin-left: 20px;
+}
+
+.card-btn9{
+  width: 230px;
+  border-radius: 1000px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+.card-btn9:hover{
+  background-color: black;
+  color: white;
+}
+
+.card-btn10{
+  width: 230px;
+  border-radius: 1000px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+}
+.card-btn10:hover{
+  background-color: black;
+  color: white;
+}
+
+.card-btn11{
+  width: 230px;
+  border-radius: 1000px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+}
+.card-btn11:hover{
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width:1024px) {
+ .card-div{
+  height: auto;
+ } 
+}

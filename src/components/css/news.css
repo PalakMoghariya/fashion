@@ -1,0 +1,13 @@
+.sub-btn{
+    width: 450px;
+}
+
+@media screen and (max-width:640px) {
+    .sub-btn{
+        width: 230px;
+        margin: 0 auto;
+    }
+    .news-input{
+        margin: 0 auto;
+    }
+}
